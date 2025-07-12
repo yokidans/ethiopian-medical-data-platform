@@ -1,7 +1,5 @@
 # Ethiopian Medical Data Platform
 
-![Pipeline Architecture](docs/pipeline_architecture.png)
-
 An end-to-end data platform for analyzing Ethiopian medical business data from Telegram channels, featuring:
 - **AI-powered image processing**
 - **Smart deduplication**
