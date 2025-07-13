@@ -1,0 +1,12 @@
+medical_data_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres  # Docker service name
+      port: 5432
+      user: ${POSTGRES_USER:-postgres}  # Matches compose file
+      password: ${POSTGRES_PASSWORD:-postgres}
+      dbname: ${POSTGRES_DB:-medical_db}
+      schema: public
+      threads: 4
