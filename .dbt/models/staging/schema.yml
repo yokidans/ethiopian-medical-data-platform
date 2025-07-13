@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: telegram_messages
+        description: "Raw Telegram messages scraped from medical channels"
+        columns:
+          - name: id
+            description: "The unique message identifier"
+            tests:
+              - unique
+              - not_null
+          - name: date
+            description: "When the message was posted"
+            tests:
+              - not_null
+          - name: channel
+            description: "The Telegram channel name"
+            tests:
+              - not_null
+
+models:
+  - name: stg_telegram_messages
+    description: "Cleaned version of raw Telegram messages"
+    columns:
+      - name: message_id
+        description: "The unique message identifier"
+        tests:
+          - unique
+          - not_null
+      - name: channel_name
+        description: "The Telegram channel name"
+        tests:
+          - not_null
+      - name: potential_products
+        description: "Array of potential medical products mentioned in the message"
